@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center pt-2">Liste des Contacts</h1>
+<div class="container">
+<div class="row">
+
+    {% for leContact in lesContacts %}
+        
+        <div class="card mb-3 col-2">
+            <h3 class="card-header"> {{ leContact.nom }} {{ leContact.prenom }} </h3>
+            <img style="height: 150px; width: 100%; display: block;" src=" {{ leContact.avatar }} " alt="Card Image">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> {{ leContact.rue }} </li>
+                <li class="list-group-item"> {{ leContact.cp }}</li>
+                <li class="list-group-item"> {{ leContact.ville }} </li>
+                <li class="list-group-item"> {{ leContact.mail }} </li>
+                <li class="list-group-item"> 
+                
+                {% if leContact.sexe == 0 %}
+                    <span class="badge badge-info">homme</span>
+                {% else %}
+                    <span class="badge badge-info">homme</span>
+                {% endif %}
+                
+                </li>
+
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+       </div>
+
+    {% endfor %}
+</div>
+</div>
+
+{% endblock %}
