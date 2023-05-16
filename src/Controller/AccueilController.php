@@ -13,13 +13,8 @@ class AccueilController extends AbstractController
      */
     public function index(){ 
 
-        $noms = ["Sarr","MLB"];
-        $age = 19;
-        return $this->render('accueil/index.html.twig',[
-
-            'lesNom' => $noms,
-            'age' -> $age
-        ]);
+     
+        return $this->render('accueil/index.html.twig');
     }
 
 

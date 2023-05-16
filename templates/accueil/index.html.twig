@@ -10,6 +10,13 @@
     {% for leNom in lesNom %}
         <li> {{leNom|upper}} </li>
     {% endfor %}
+
+    {% if lage >18 %}
+        Vous êtes majeur !
+    {% else %}
+        Vous êtes mineur !
+    {% endif %}
+    
     </ul>
 
 {% endblock %}
