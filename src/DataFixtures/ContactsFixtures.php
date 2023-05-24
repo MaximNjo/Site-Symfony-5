@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\Contact;
+use App\Entity\Categorie;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -12,6 +13,28 @@ class ContactsFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker=Factory::create("fr_FR");
+
+        $categorie = new Categorie();
+        $categorie->setLibelle("Professionnel")
+                  ->setDescription("azerty")
+                  ->setImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.fr%2FTourism-g293773-Yaounde_Centre_Region-Vacations.html&psig=AOvVaw2u0M3e1wJX5oawt6Mwu59k&ust=1685022377245000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCLDFtdSLjv8CFQAAAAAdAAAAABAD/business");
+        $manager->persist($categorie);
+
+        $categorie = new Categorie();
+        $categorie->setLibelle("Sport")
+                  ->setDescription("azerty")
+                  ->setImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.fr%2FTourism-g293773-Yaounde_Centre_Region-Vacations.html&psig=AOvVaw2u0M3e1wJX5oawt6Mwu59k&ust=1685022377245000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCLDFtdSLjv8CFQAAAAAdAAAAABAD/sports");
+        $manager->persist($categorie);
+
+        $categorie = new Categorie();
+        $categorie->setLibelle("Privé")
+                  ->setDescription("azerty")
+                  ->setImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.fr%2FTourism-g293773-Yaounde_Centre_Region-Vacations.html&psig=AOvVaw2u0M3e1wJX5oawt6Mwu59k&ust=1685022377245000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCLDFtdSLjv8CFQAAAAAdAAAAABAD/people");
+       
+        $manager->persist($categorie);
+
+
+
         $genres=["male","female"];
         
         for ($i=0; $i < 100 ; $i++) { 
